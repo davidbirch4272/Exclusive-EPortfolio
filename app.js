@@ -3,8 +3,6 @@
 //   Public Key:   RFX9PVJtrLuEWM9lW
 
 let contrastToggle = false;
-
-
 function toggleContrast() {
     contrastToggle = !contrastToggle;
     if (contrastToggle) {
@@ -16,35 +14,28 @@ function toggleContrast() {
     }
 }
 
-
-
 function contact(event) {
  event.preventDefault();
- //   emailjs
- //   .sendForm(
- //       'service_i4sy1qs',
- //       'template_oh052i8',
- //       event.target,
- //       'RFX9PVJtrLuEWM9lW'
- //   ).then(()   => {
- //       console.log('this worked')
-   //  })
+const loading = document.querySelector('.modal__overlay--loading');
+const success = document.querySelector('.modal__overlay--success');
+loading.classList += " modal__overlay--visible"
 
-//  setTimeout(()  =>  {
-//    console.log('it worked 1')
-//    }, 500);
-  
-  
-  
-   const loading = document.querySelector('modal__overlay--loading');
-   const success = document.querySelector('modal__overlay--success');
-   loading.classList += " modal__overlay--visible"
-    setTimeout(() => {
-      loading.classList.remove("modal__overlay--visible");
-      console.log('it worked 1')
-    }, 500);
-
-}
+ emailjs
+   .sendForm(
+       'service_i4sy1qs',
+       'template_oh052i8',
+       event.target,
+       'RFX9PVJtrLuEWM9lW'
+   ).then(()   => {
+    loading.classList.remove("modal__overlay--visible");
+    success.classList += " modal__overlay--visible";
+    }).catch (() => {
+        loading.classList.remove("modal__overlay--visible");
+        alert(
+     "The email service is temporarily unavailable.  Please contact me directly on davidbirch4272@gmail.com"   
+    );
+    })
+   }
 
 let isModalOpen = false;
 function toggleModal() {
@@ -57,3 +48,13 @@ function toggleModal() {
    
 }
 
+function moveBackground(event)  {
+    const shapes = document.querySelectorAll(".shape")
+    const x = event.clientX;
+    const y = event.clientY;
+    
+    for (let i = 0; i < shapes.length; ++1)  {
+        shapes[i].style.transform = `translate(10%, 10%)`
+    }
+    }
+    
