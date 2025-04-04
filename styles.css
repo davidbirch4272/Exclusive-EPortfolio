@@ -617,6 +617,7 @@ font-size: 26px;
 /*  Footer */
 
 footer {
+position: relative;
 background-color: #242424;
 display: flex;
 padding: 6% 0;
@@ -658,7 +659,7 @@ padding: 6% 0;
 
 .shape--0 {
     top: 15vh;
-    left: 1vw;
+    left: 2vw;
 }
 
 .shape--1 {
@@ -673,7 +674,7 @@ padding: 6% 0;
 
 .shape--3 {
     top: 50vh;
-    left: 1vw;
+    left: 4vw;
 }
 
 .shape--4 {
@@ -700,3 +701,92 @@ padding: 6% 0;
     top: 80vh;
     left: 80vw;
 }
+
+
+/*  tablets, large smart phones  */
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 80px;
+    }
+
+    .header__para {
+        font-size: 20px;
+
+    }
+
+.modal {
+    top: 0;
+    left: 0;
+    transform: none;
+    height: auto;
+    width: 100%;
+    flex-direction: column-reverse;
+    border-radius: 0;
+}
+
+.modal__half {
+    width: 100%;
+}
+
+.modal--open #projects {
+    margin-top: 296px;
+}
+
+.modal--open .mail__btn {
+    bottom: -50%;
+}
+}
+
+/*  Small phones */
+
+@media (max-width: 480px) {
+
+.title {
+    font-size: 52px;
+}
+
+.header__para {
+    font-size: 18px;
+}    
+
+.nav__link:first-child {
+    display: none;
+}
+
+.project__description--para {
+    display: none;
+}
+
+.project__description {
+    left: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.project__description--sub-title {
+    margin-bottom: 8px;
+}
+
+.modal--open #projects {
+    margin-top: 320px;
+}
+
+
+.modal--open .mail__btn {
+    bottom: -55%;
+}
+
+.modal__half {
+    padding: 40px;
+}
+
+.footer__logo--image {
+    max-width: 470px;
+    max-width: 90%;
+    margin-left: 15px;
+}
+
+}
+
