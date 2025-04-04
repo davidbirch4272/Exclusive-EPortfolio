@@ -11,8 +11,12 @@
     font-family: 'Roboto', sans-serif;
 }
 
-
 /* General */
+
+html {
+    scroll-behavior: smooth;
+}
+
 
 li  {
     list-style-type: none;
@@ -738,6 +742,12 @@ padding: 6% 0;
 }
 }
 
+.shape--4 {
+    top: 40vh;
+    left: 50vw;
+}
+
+
 /*  Small phones */
 
 @media (max-width: 480px) {
@@ -752,6 +762,26 @@ padding: 6% 0;
 
 .nav__link:first-child {
     display: none;
+}
+
+.shape--4 {
+    top: 55vh;
+    left: 50vw;
+}
+
+.shape--5 {
+    top: 57vh;
+    left: 80vw;
+}
+
+.modal--open .shape--4 {
+    top: 50vh;
+    left: 50vw;
+}
+
+.modal--open .shape--5 {
+    top: 55vh;
+    left: 80vw;
 }
 
 .project__description--para {
@@ -770,7 +800,7 @@ padding: 6% 0;
 }
 
 .modal--open #projects {
-    margin-top: 320px;
+    margin-top: 352px;
 }
 
 
